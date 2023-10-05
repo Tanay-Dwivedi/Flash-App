@@ -1,0 +1,31 @@
+- The code is for an Android flashlight app.
+- It extends `AppCompatActivity`, indicating it's an Android activity.
+- The layout of the activity is set to `activity_main.xml`.
+
+Inside `onCreate` method:
+- Initializes UI elements:
+  - `switching`: A ToggleButton used to turn the flashlight on and off.
+  - `bulboning` and `bulboffing`: ImageViews representing the state of the flashlight (bulb on and off).
+
+- Sets an `OnClickListener` for the `switching` ToggleButton:
+  - When the ToggleButton is clicked:
+    - Checks the current text of the button:
+      - If it reads "Turn ON," it means the flashlight is currently off.
+      - If it's not "Turn ON," the flashlight is currently on.
+    - Displays a Toast message to inform the user of the current state ("Bulb now on" or "Bulb now off").
+    - Updates the visibility of the `bulboning` ImageView accordingly (visible when the flashlight is on, invisible when off).
+    - Calls the `changeLightState` method to control the flashlight state (turn on or off).
+
+- `changeLightState` method:
+  - Manages the state of the flashlight:
+    - Uses the `CameraManager` to interact with the device's camera.
+    - Attempts to get the camera ID (usually the rear camera).
+    - Sets the torch mode (flashlight) to the specified state (on or off).
+    - Handles potential exceptions with `CameraAccessException`.
+
+- `showToast` method:
+  - Displays a Toast message with the specified message and duration (`Toast.LENGTH_SHORT`).
+
+In summary, the code initializes a flashlight app with a ToggleButton to control the flashlight
+state and ImageView elements to visually represent the bulb's on/off status. When the ToggleButton is clicked,
+it updates the UI, shows a Toast message, and controls the flashlight state using the `CameraManager`.
