@@ -1,6 +1,6 @@
 # Flash-App
 
-**[Explanation File]()**
+**[Explanation File](https://github.com/Tanay-Dwivedi/Flash-App/blob/master/app/Explanation%20File)**
 
 ***Overview:-***
 
